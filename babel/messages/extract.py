@@ -30,18 +30,19 @@ GROUP_NAME = 'babel.extractors'
 
 DEFAULT_KEYWORDS = {
     '_': None,
+    'N_': None,
     'gettext': None,
     'ngettext': (1, 2),
-    'ugettext': None,
-    'ungettext': (1, 2),
     'dgettext': (2,),
     'dngettext': (2, 3),
-    'N_': None,
     'pgettext': ((1, 'c'), 2),
-    'upgettext': ((1, 'c'), 2),
-    'npgettext': ((1, 'c'), 2, 3),
-    'unpgettext': ((1, 'c'), 2, 3),
+    'npgettext': ((1, 'c'), 2, 3)
+    'dpgettext': ((2, 'c'), 3),
+    'dnpgettext': ((2, 'c'), 3, 4)
 }
+for kw in DEFAULT_KEYWORDS.keys():
+    DEFAULT_KEYWORDS['l'+kw] = DEFAULT_KEYWORDS[kw]
+    DEFAULT_KEYWORDS['u'+kw] = DEFAULT_KEYWORDS[kw]
 
 DEFAULT_MAPPING = [('**.py', 'python')]
 
